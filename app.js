@@ -1,5 +1,4 @@
 'use strict'
-const { fetch } = require('undici');
 const express = require('express');
 const app = express();
 let todos = [
@@ -37,5 +36,16 @@ app.use((err, req, res, next) => {
   res.status(err.statusCode || 500).json({ error: err.message });
 });
 
-
 app.listen(3000);
+
+const next = require('next');
+const dev = process.env.NODE_ENV !== 'production';
+const nextApp = next({ dev });
+
+nextApp.prepare().then(
+  () => app.get('*', nextApp.getRequestHandler()),
+  err => {
+    console.log(err);
+    process.exit(1);
+  }
+);
