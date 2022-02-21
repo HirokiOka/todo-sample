@@ -1,0 +1,24 @@
+{
+  "name": "todo-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HirokiOka/todo-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HirokiOka/todo-sample/issues"
+  },
+  "homepage": "https://github.com/HirokiOka/todo-sample#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "undici": "^4.14.1"
+  }
+}
